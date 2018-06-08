@@ -1,0 +1,14 @@
+language: elixir
+elixir:
+  - 1.6.5
+otp_release:
+  - 20.1
+addonl:
+  postgresql: '10.4'
+services:
+  - postgresql
+before_script:
+  - mix do ecto.create, ecto.migrate
+script:
+  - mix test
+
